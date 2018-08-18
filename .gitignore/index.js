@@ -10,7 +10,9 @@ const queue = new Map();
 
 var servers = {};
 
-client.login(process.env.TOKEN);
+var fs = require('fs');
+
+client.login("NDc5Mzk0MjkwMjU5MzI5MDM0.DlmaMg.kmEJzlfi6i1rfUgKCrSh38cyxSE");
 
 function play(connection, message) {
   
@@ -189,4 +191,22 @@ client.on('message', message => {
   
   }
 
+  const reponse = JSON.parse(fs.readFileSync("./eightball.json", "utf8"));
+
+  if(message.content.startsWith(prefix + "8ball")) {
+  
+      var args = message.content.split(' ').join(' ');
+  
+      if(!args) return message.channel.send("Tu dois me poser une question")
+  
+      var ball_embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setTitle('Voici ma commande 8ball :')
+      .addField('Question :', `${args}`)
+      .addField('Réponse', reponse[Math.round(Math.random() * reponse.lenght)])
+      .setFooter('8ball :3')
+      message.channel.send(ball_embed);
+  }
+
 })
+
