@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "fs-extra": "^7.0.0",
-    "opusscript": "^0.0.6",
-    "discord.js": "^11.3.2",
-    "ffmpeg-binaries": "^3.2.2-3"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nekiiro",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "opusscript": "0.0.6",
+    "ytdl-core": "^0.24.0"
+  }
 }
