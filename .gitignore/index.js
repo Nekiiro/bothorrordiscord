@@ -191,7 +191,7 @@ client.on('message', message => {
     
     }
 
-const réponse = JSON.parse(fs.readFileSync('./huitballe.json', "utf8"));
+const reponse = JSON.parse(fs.readFileSync('./huitballe.json', "utf8"));
 
 if (message.content.startsWith(prefix + "8ball")) {
     
@@ -203,7 +203,7 @@ if (message.content.startsWith(prefix + "8ball")) {
     .setColor('RANDOM')
     .setTitle('Voice ma commande 8ball :')
     .addField('Question :', `${args}`)
-    .addField('Réponse :', réponse[Math.round(Math.random() * réponse.lenght)])
+    .addField('Réponse :', reponse[Math.round(Math.random() * reponse.lenght)])
     .setFooter('8ball :3')
     message.channel.send(ball_embed);
 }
