@@ -203,7 +203,7 @@ if (message.content.startsWith(prefix + "8ball")) {
     .setColor('RANDOM')
     .setTitle('Voici ma commande 8ball :')
     .addField('Question :', `${args}`)
-    .addField('Réponse', réponde[Math.round(Math.random() * réponse.lenght)])
+    .addField('Réponse', réponse[Math.round(Math.random() * réponse.lenght)])
     .setFooter('8ball :3')
     message.channel.send(ball_embed)
 }
