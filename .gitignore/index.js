@@ -191,19 +191,19 @@ client.on('message', message => {
     
     }
 
-const reponse = JSON.parse(fs.readFileSync('./huitballe.json', "utf8"));
+const réponse = JSON.parse(fs.readFileSync('./huitballe.json', "utf8"));
 
 if (message.content.startsWith(prefix + "8ball")) {
     
-    var args = message.content.split(' ').join(' ').slice(1);
+    var args = message.content.split(' ').join(' ').slice(6);
 
-    if(!args) return message.channel.send("Tu dois me poser une question :8ball:")
+    if(!args) return message.channel.send("Tu dois me poser une question ...")
 
     var ball_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle('Voice ma commande 8ball :')
     .addField('Question :', `${args}`)
-    .addField('Réponse :', reponse[Math.round(Math.random() * reponse.lenght)])
+    .addField('Réponse :', réponse[Math.round(Math.random() * réponse.lenght)])
     .setFooter('8ball :3')
     message.channel.send(ball_embed);
 }
