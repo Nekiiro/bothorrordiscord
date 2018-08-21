@@ -92,7 +92,7 @@ client.on('message', message => {
     }
 
     if(message.content.startsWith(prefix + "clear")) {
-        if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send("Vous n'avez pas cette permission")
+        if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas cette permission")
 
         let args = message.content.split(" ").slice(1);
 
