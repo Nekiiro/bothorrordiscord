@@ -12,7 +12,7 @@ var servers = {};
 
 var fs = require('fs');
 
-client.login("process.env.TOKEN");
+client.login(process.env.TOKEN);
 
 function play(connection, message) {
   
